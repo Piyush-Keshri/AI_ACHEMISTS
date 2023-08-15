@@ -33,3 +33,6 @@ const PreviewPage = ({ imageData, imageBlob }) => {
       );
     }
   };
+
+
+export default PreviewPage
