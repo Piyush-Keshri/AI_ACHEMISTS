@@ -88,7 +88,7 @@ const ErrorPreviewPage = ({ imageData, imageBlob }) => {
             </Typography>
 
             <Button onClick={handleExpand} variant="contained">
-              {expanded ? 'Collapse' : 'Expand'}
+              {expanded ? 'Show less' : 'Nutritional Breakdown'}
             </Button>
             <Collapse in={expanded} transitionComponent={Fade}>
               <Box sx={{ width: '100%', textAlign: 'left', margin: '2rem auto' }}>
@@ -100,18 +100,18 @@ const ErrorPreviewPage = ({ imageData, imageBlob }) => {
                 <List>
                   <ListItem >
                       <ListItemText>
-                      <b>Diabetes:</b><br />
+                      <b>Nutritional Content:</b><br />
                       <span style={{ color: '#bbb' }}>
-                      The carbohydrate content of the noodles is quite high, with 41.7g per serving. This can have a significant impact on blood sugar levels and may not be suitable for individuals with diabetes. It is generally recommended for individuals with diabetes to consume a controlled amount of carbohydrates per meal.
+                      The bread appears to be relatively high in calories (246 kcal per 100g) and carbohydrates. It's important for you, as someone looking to lose weight, to focus on a balanced diet that supports your weight loss goals and diabetes management.
                       </span>
                       </ListItemText>
                   </ListItem>
                   
                   <ListItem >
                       <ListItemText>
-                      <b>Weight loss:</b><br />
+                      <b>Sodium Content:</b><br />
                       <span style={{ color: '#bbb' }}>
-                      While the noodles do contain a moderate amount of protein, the high carbohydrate content and relatively high calorie content may not be suitable for a weight loss diet. It is usually recommended to consume foods that are lower in calories and promote satiety in a weight loss regimen.
+                      The sodium content is 380mg per 100g. People with diabetes should be mindful of sodium intake as it can affect blood pressure and overall health.
                       </span>
                       </ListItemText>
                   </ListItem>
@@ -120,7 +120,7 @@ const ErrorPreviewPage = ({ imageData, imageBlob }) => {
                       <ListItemText>
                       <b>Allergies:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      The noodles you mentioned do not contain gluten or nuts, which is suitable for your allergies.
+                      You have mentioned that you have allergies to peanuts. While the bread itself does not contain peanuts, cross-contamination could potentially occur during the manufacturing process. The ingredient list does not include peanuts, but people with severe allergies should be cautious when consuming products processed in facilities that handle allergens.
                       </span>
                       </ListItemText>
                   </ListItem>
@@ -129,47 +129,34 @@ const ErrorPreviewPage = ({ imageData, imageBlob }) => {
                       <ListItemText>
                       <b>Age and Gender:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      Age and gender do not have a significant impact on the suitability of the product. However, it is important to consider your specific dietary needs and health goals.
+                      The product does not have any specific contraindications based on age or gender. However, your age and gender should be considered when choosing foods that align with your health goals.
                       </span>
                       </ListItemText>
                   </ListItem>
 
                   <ListItem >
                       <ListItemText>
-                      <b>Current Medications:</b><br /> 
+                      <b>Diabetes:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      No information is provided about any specific current medications you may be taking. It is always important to consult with a healthcare professional or a registered dietitian before making significant changes to your diet, especially if you are on any medications.
+                      As someone with diabetes, it's important to manage your carbohydrate intake to regulate blood sugar levels. The nutritional information provided indicates that this bread contains 49.1g of carbohydrates per 100g. While carbohydrates are a necessary part of the diet, individuals with diabetes should choose whole grains and high-fiber carbohydrates to help stabilize blood sugar levels. The product description mentions dietary fibers, but the specific fiber content is not provided.
                       </span>
                       </ListItemText>
                   </ListItem>
 
                   <ListItem >
                       <ListItemText>
-                      <b>Health Conditions:</b><br /> 
+                      <b>Artificial Ingredients:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      Considering your diabetes and weight loss goals, it is advisable to choose options with lower carbohydrate content and fewer calories to better manage blood sugar levels. There may be more suitable alternatives available specifically designed for individuals with diabetes.
+                      The bread contains additives such as emulsifier (471), antioxidant (300), acidity regulator (260), and preservative (282). While these additives are considered safe for consumption, some individuals may prefer to minimize their consumption of processed foods containing these additives.
                       </span>
                       </ListItemText>
                   </ListItem>
                 </List>
 
 
-                <Typography variant='h6' sx={{ fontWeight: 'bolder' }}>Potential concerns:</Typography>
-                <List>
-                  <ListItem>
-                    <ListItemText sx={{ color: '#bbb' }}>
-                      - High carbohydrate content: The high carbohydrate content per serving may lead to significant fluctuations in blood sugar levels for    individuals with diabetes.
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemText style={{ color: '#bbb' }}>
-                      - High calorie content: The relatively high-calorie content may not align with your weight loss goals, as it is important to create a calorie deficit to promote weight loss.
-                    </ListItemText>
-                  </ListItem>
-                </List>
-
-
-                <Typography>In conclusion, it is recommended to consult with a healthcare professional or registered dietitian who can provide personalized advice based on your specific needs and health conditions. They can guide you in selecting alternative products that better align with your goals and dietary restrictions.</Typography>
+                <Typography>
+                Given your desire to lose weight and manage diabetes, it's recommended to choose whole, minimally processed foods with clear nutritional information. It's important to consult with a registered dietitian or healthcare professional who can provide personalized dietary recommendations based on your specific health needs and goals.
+                </Typography>
 
               </Box>
             </Collapse>
