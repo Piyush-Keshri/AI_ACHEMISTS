@@ -62,8 +62,8 @@ const ErrorPreviewPage = ({ imageData, imageBlob }) => {
       return (
         <Container maxWidth="sm" sx={{ textAlign: 'center', marginTop: 3, maxWidth: '400px' }}>
           <Typography variant='h4'>Preview Page</Typography>
-          <Box sx={{ marginTop: '2rem', display: 'flex', alignItems: 'center', justifyCenter: 'center', background: '#555', height: '30vh', borderRadius: '5px' }}>
-            <img src={imageData} alt="Preview" style={{ maxWidth: '80%', margin: '0 auto' }} />
+          <Box sx={{ marginTop: '2rem', display: 'flex', alignItems: 'center', justifyCenter: 'center', background: '#555', borderRadius: '5px', height: 'fit-content', padding: '2rem' }}>
+            <img src={imageData} alt="Preview" style={{ maxWidth: '100%', margin: '0 auto' }} />
           </Box>
 
           {loading ? (
