@@ -88,30 +88,30 @@ const SuccessPreviewPage = ({ imageData, imageBlob }) => {
             </Typography>
 
             <Button onClick={handleExpand} variant="contained">
-              {expanded ? 'Collapse' : 'Expand'}
+              {expanded ? 'Show less' : 'Nutritional Breakdown'}
             </Button>
             <Collapse in={expanded} transitionComponent={Fade}>
               <Box sx={{ width: '100%', textAlign: 'left', margin: '2rem auto' }}>
                 <Typography variant='h6' sx={{ fontWeight: 'bolder' }}>Explanation:</Typography>
-                <Typography>Based on the provided information, it is not recommended for you to purchase and use this product.</Typography>
+                <Typography>Based on the provided nutritional information and your personal information, here's a detailed analysis of whether you should purchase and use this oatmeal product:</Typography>
 
                 <Typography sx={{ marginTop: '1rem', fontWeight: 'bolder' }} variant='h6'>Reasoning:</Typography>
 
                 <List>
                   <ListItem >
                       <ListItemText>
-                      <b>Diabetes:</b><br />
+                      <b>Nutritional Content:</b><br />
                       <span style={{ color: '#bbb' }}>
-                      The carbohydrate content of the noodles is quite high, with 41.7g per serving. This can have a significant impact on blood sugar levels and may not be suitable for individuals with diabetes. It is generally recommended for individuals with diabetes to consume a controlled amount of carbohydrates per meal.
+                      The oatmeal product appears to be a good choice for you, as it is low in added sugars and saturated fat. It contains dietary fiber, which can be beneficial for managing diabetes and promoting weight loss. Fiber helps stabilize blood sugar levels and promotes a feeling of fullness, which can assist in controlling your appetite.
                       </span>
                       </ListItemText>
                   </ListItem>
                   
                   <ListItem >
                       <ListItemText>
-                      <b>Weight loss:</b><br />
+                      <b>Caloric Content:</b><br />
                       <span style={{ color: '#bbb' }}>
-                      While the noodles do contain a moderate amount of protein, the high carbohydrate content and relatively high calorie content may not be suitable for a weight loss diet. It is usually recommended to consume foods that are lower in calories and promote satiety in a weight loss regimen.
+                      The energy content is reasonable and can fit well within a balanced diet. Since you're looking to lose weight, it's important to monitor your caloric intake to create a calorie deficit, which is essential for weight loss.
                       </span>
                       </ListItemText>
                   </ListItem>
@@ -120,7 +120,7 @@ const SuccessPreviewPage = ({ imageData, imageBlob }) => {
                       <ListItemText>
                       <b>Allergies:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      The noodles you mentioned do not contain gluten or nuts, which is suitable for your allergies.
+                      The oatmeal product contains only one ingredient: Rolled Oats. Since you mentioned having allergies to peanuts, there is no indication that this product contains peanuts or peanut-derived ingredients. Therefore, it appears to be safe for you in terms of allergies.
                       </span>
                       </ListItemText>
                   </ListItem>
@@ -129,25 +129,34 @@ const SuccessPreviewPage = ({ imageData, imageBlob }) => {
                       <ListItemText>
                       <b>Age and Gender:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      Age and gender do not have a significant impact on the suitability of the product. However, it is important to consider your specific dietary needs and health goals.
+                      The oatmeal product is suitable for individuals of all genders and age groups, including yours.
                       </span>
                       </ListItemText>
                   </ListItem>
 
                   <ListItem >
                       <ListItemText>
-                      <b>Current Medications:</b><br /> 
+                      <b>Diabetes Management:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      No information is provided about any specific current medications you may be taking. It is always important to consult with a healthcare professional or a registered dietitian before making significant changes to your diet, especially if you are on any medications.
+                      The low glycemic index of oatmeal can be beneficial for managing diabetes. It provides a slow and steady release of glucose into the bloodstream, helping to prevent rapid spikes in blood sugar levels. However, always monitor your blood sugar levels and consult with your healthcare provider before making any significant changes to your diet.
                       </span>
                       </ListItemText>
                   </ListItem>
 
                   <ListItem >
                       <ListItemText>
-                      <b>Health Conditions:</b><br /> 
+                      <b>Weight Loss:</b><br /> 
                       <span style={{ color: '#bbb' }}>
-                      Considering your diabetes and weight loss goals, it is advisable to choose options with lower carbohydrate content and fewer calories to better manage blood sugar levels. There may be more suitable alternatives available specifically designed for individuals with diabetes.
+                      Oatmeal is a commonly recommended food for weight loss due to its fiber content and ability to promote satiety. It can help you feel full for longer periods, which may aid in reducing overall calorie intake.
+                      </span>
+                      </ListItemText>
+                  </ListItem>
+
+                  <ListItem >
+                      <ListItemText>
+                      <b>Other Nutrients:</b><br /> 
+                      <span style={{ color: '#bbb' }}>
+                      The oatmeal product contains iron, magnesium, and zinc, which are important minerals for overall health.
                       </span>
                       </ListItemText>
                   </ListItem>
@@ -156,20 +165,39 @@ const SuccessPreviewPage = ({ imageData, imageBlob }) => {
 
                 <Typography variant='h6' sx={{ fontWeight: 'bolder' }}>Potential concerns:</Typography>
                 <List>
-                  <ListItem>
-                    <ListItemText sx={{ color: '#bbb' }}>
-                      - High carbohydrate content: The high carbohydrate content per serving may lead to significant fluctuations in blood sugar levels for    individuals with diabetes.
-                    </ListItemText>
+                <ListItem >
+                      <ListItemText>
+                      <b>Carbohydrate Intake:</b><br /> 
+                      <span style={{ color: '#bbb' }}>
+                      While the product is low in carbohydrates and sugars, it's still important to be mindful of your total carbohydrate intake, especially if you're managing diabetes. Monitor your blood sugar levels after consuming the oatmeal to ensure it doesn't cause any unwanted spikes.
+                      </span>
+                      </ListItemText>
                   </ListItem>
-                  <ListItem>
-                    <ListItemText style={{ color: '#bbb' }}>
-                      - High calorie content: The relatively high-calorie content may not align with your weight loss goals, as it is important to create a calorie deficit to promote weight loss.
-                    </ListItemText>
+
+
+                  <ListItem >
+                      <ListItemText>
+                      <b>Medications:</b><br /> 
+                      <span style={{ color: '#bbb' }}>
+                      If you're taking any medications for diabetes, weight loss, or other health conditions, it's recommended to consult with your healthcare provider before making significant dietary changes.
+                      </span>
+                      </ListItemText>
+                  </ListItem>
+
+                  <ListItem >
+                      <ListItemText>
+                      <b>Portion Control:</b><br /> 
+                      <span style={{ color: '#bbb' }}>
+                      While oatmeal is a nutritious choice, portion control is key, especially if you're aiming to lose weight. Be mindful of serving sizes to manage your calorie intake effectively.
+                      </span>
+                      </ListItemText>
                   </ListItem>
                 </List>
 
 
-                <Typography>In conclusion, it is recommended to consult with a healthcare professional or registered dietitian who can provide personalized advice based on your specific needs and health conditions. They can guide you in selecting alternative products that better align with your goals and dietary restrictions.</Typography>
+                <Typography>
+                In conclusion, based on the provided information and your personal details, the oatmeal product seems like a suitable choice for you. However, it's crucial to consult with your healthcare provider or a registered dietitian before making any major changes to your diet, especially since you have diabetes. They can provide personalized guidance based on your specific health needs and goals.
+                </Typography>
 
               </Box>
             </Collapse>
