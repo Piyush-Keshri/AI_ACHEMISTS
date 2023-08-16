@@ -19,7 +19,7 @@ const CircularButton = styled(Button)({
   },
 });
 
-const CameraPage = ({ setImageData }) => {
+const CameraPage = ({ setImageData, setClick, click }) => {
   const videoRef = useRef(null);
   const navigate = useNavigate();
   const [facingMode, setFacingMode] = useState('environment');
@@ -27,37 +27,39 @@ const CameraPage = ({ setImageData }) => {
   const [cameraDevices, setCameraDevices] = useState([]);
   const [selectedDeviceId, setSelectedDeviceId] = useState('');
 
-  const takePicture = () => {
+  const takePicture = (e) => {
+    setClick(click+1);
+
     if (videoRef.current) {
       const canvas = document.createElement('canvas');
       canvas.width = videoRef.current.videoWidth;
       canvas.height = videoRef.current.videoHeight;
       const context = canvas.getContext('2d');
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+      // canvas.toBlob(blob => {
+      //   console.log(blob);
+      //   const formData = new FormData();
+      //   formData.append('image', blob, 'captured.jpg')
+      //   // setImageBlob(formData)
+      //   console.log(formData);
+      // })
+
+      const image = new Image();
+      image.src = canvas.toDataURL('image/jpeg');
+      const formData = new FormData();
+      formData.append('image', image.src);
+
+      // console.log(image)
       const imageDataURL = canvas.toDataURL('image/jpeg');
       setImageData(imageDataURL);
+
+
+      // console.log(e.target.files[0])
+
       navigate('/preview', { state: { imageData: imageDataURL } });
+
     }
   };
-
-
-
-  const captureImage = async ({ setImageBlob }) => {
-    try {
-      if (videoRef.current) {
-        const canvas = document.createElement('canvas');
-        canvas.width = videoRef.current.videoWidth;
-        canvas.height = videoRef.current.videoHeight;
-        const context = canvas.getContext('2d');
-        context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-        const imageDataURL = canvas.toDataURL('image/jpeg');
-        setImageData(imageDataURL);
-        navigate('/preview', { state: { imageData: imageDataURL } });
-      }
-    } catch (error) {
-      console.error('Error capturing image:', error);
-    }
-  }
 
   const switchCamera = () => {
     setFacingMode((prevMode) => (prevMode === 'user' ? 'environment' : 'user'));
@@ -171,7 +173,7 @@ const CameraPage = ({ setImageData }) => {
         <CircularButton variant="contained" color="primary" onClick={switchCamera}>
           <FlipCameraAndroidIcon />
         </CircularButton>
-        <CircularButton variant="contained" color="primary" onClick={captureImage}>
+        <CircularButton variant="contained" color="primary" onClick={takePicture}>
           <CameraAltIcon />
         </CircularButton>
         {aspectRatio === 'portrait' ? (
